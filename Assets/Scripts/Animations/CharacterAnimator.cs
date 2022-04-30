@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace NeonRose.Animations
 {
-    [ExecuteAlways]
     public class CharacterAnimator : MonoBehaviour
     {
         private const float TAU = (float)Math.PI * 2;
@@ -15,8 +14,10 @@ namespace NeonRose.Animations
 
         [Header("Config")]
         public float feetRadius = .5f;
+        public float torsoMaxTilt = 27;
 
         [Header("References")]
+        public Transform body;
         public Transform torso;
         public Transform rFoot;
         public Transform lFoot;
@@ -30,8 +31,8 @@ namespace NeonRose.Animations
         [SerializeField] private Vector3 _rFootBasePos;
         [SerializeField] private Vector3 _lFootBasePos;
         
-        [SerializeField] private float _atan2;
-        [SerializeField] private Quaternion _torsoRot;
+        [SerializeField] private float _torsoRot;
+        [SerializeField] private float _torsoTilt;
 
         private Rigidbody _body;
         private NeonRose.Controllers.CharacterController _controller;
@@ -46,7 +47,7 @@ namespace NeonRose.Animations
         {
             velocity = _body.velocity;
             if (_controller._direction.magnitude > .001f)
-                heading.x = _controller._direction.x;
+                heading = _controller._direction;
             
             UpdateFeet();
             UpdateTorso();
@@ -54,12 +55,13 @@ namespace NeonRose.Animations
 
         private void UpdateTorso()
         {
-            _atan2 = Mathf.Atan2(heading.x, heading.z);
-            
+            _torsoRot = Mathf.Atan2(heading.x, heading.z);
+            _torsoTilt = torsoMaxTilt * (velocity.magnitude / _controller.speed);
             if (!apply)
                 return;
-            
-            torso.rotation = _torsoRot = Quaternion.Euler(0, _atan2 * Mathf.Rad2Deg, 0);
+
+            body.rotation = Quaternion.Euler(0, _torsoRot * Mathf.Rad2Deg, 0);
+            torso.localRotation = Quaternion.Euler(_torsoTilt, 0, 0);
         }
         
         private void UpdateFeet()
