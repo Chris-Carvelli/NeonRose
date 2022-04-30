@@ -97,8 +97,6 @@
 				// color = max(edge, color);
 				return edge;
 			}
-
-            
 			ENDHLSL
 		}
     }

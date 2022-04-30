@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!84 &13461003
+--- !u!84 &478748324
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 739475e80f7400240ac6acbff1b505e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -258,7 +258,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1215483253
+--- !u!1 &903346315
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,8 +266,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1215483254}
-  - component: {fileID: 1215483255}
+  - component: {fileID: 903346316}
+  - component: {fileID: 903346317}
   m_Layer: 6
   m_Name: Camera_CameraNormalsTexture
   m_TagString: Untagged
@@ -275,13 +275,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1215483254
+--- !u!4 &903346316
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215483253}
+  m_GameObject: {fileID: 903346315}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -290,13 +290,13 @@ Transform:
   m_Father: {fileID: 1813971635}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1215483255
+--- !u!20 &903346317
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215483253}
+  m_GameObject: {fileID: 903346315}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -323,7 +323,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 13461003}
+  m_TargetTexture: {fileID: 478748324}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -511,7 +511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1215483254}
+  - {fileID: 903346316}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -620,6 +620,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2765155461706061770, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 739475e80f7400240ac6acbff1b505e7, type: 2}
     - target: {fileID: 5402293456800712208, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
       propertyPath: speed
       value: 20
@@ -672,5 +676,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: b0b244d6-ea8d-4e7b-9457-6712da5e6044
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Dash[/DualShock4GamepadHID/buttonSouth,/Keyboard/shift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1883365085}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NeonRose.Controllers.CharacterController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140170733893080668, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+--- !u!114 &1883365085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5402293456800712208, guid: 78f34c81b77eb01418f5c1132138afa0, type: 3}
+  m_PrefabInstance: {fileID: 1883365083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16943eb6720a4bfd8fdb17afed524923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
