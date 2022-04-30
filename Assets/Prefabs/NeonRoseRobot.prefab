@@ -181,7 +181,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -661,7 +661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7970527277450805989}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 3}
+  m_LocalPosition: {x: 0.0000002682209, y: 3.7499995, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -680,9 +680,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.55940926, b: 0, a: 1}
-  m_Intensity: 30
-  m_Range: 6.5
-  m_SpotAngle: 80
+  m_Intensity: 27
+  m_Range: 10.79
+  m_SpotAngle: 126
   m_InnerSpotAngle: 6
   m_CookieSize: 10
   m_Shadows:
@@ -962,5 +962,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 3.25, z: 10}
-  m_Center: {x: 0, y: 0, z: 4}
+  m_Size: {x: 15, y: 3.25, z: 20}
+  m_Center: {x: 0, y: 0, z: 8.8}
