@@ -84,8 +84,8 @@ namespace B3.Actions
         void Update()
         {
             success = agent.CalculatePath(Locations[locationIndex].transform.position, path);
-
-            if (Vector3.Distance(transform.position, agent.destination) < 0.25f)
+            Debug.Log(Vector3.Distance(transform.position, agent.destination));
+            if (Vector3.Distance(transform.position, agent.destination) < 1.1f)
             {
                 if (locationIndex + 1 == Locations.Length)
                 {
@@ -134,7 +134,8 @@ namespace B3.Actions
                 {
                     agent.isStopped = true;
                     Quaternion difference = Quaternion.Euler(0, turnAngle, 0);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, difference * transform.rotation, rotateSpeed * Time.deltaTime);
+                    Quaternion rotationCurrent = transform.rotation;
+                    transform.rotation = Quaternion.RotateTowards(rotationCurrent, difference * rotationCurrent, rotateSpeed * Time.deltaTime);
                 }
             }
             else
