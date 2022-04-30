@@ -21,6 +21,8 @@ namespace NeonRose.Controllers
 
         public Vector3 _direction;
 
+        public float angle;
+
         private void Start()
         {
             _characterState = CharacterState.GROUNDED;
@@ -30,6 +32,7 @@ namespace NeonRose.Controllers
 
         private void FixedUpdate()
         {
+            angle = -_camera.transform.rotation.eulerAngles.y *  Mathf.Deg2Rad;
             UpdatePlayer();
         }
 
@@ -38,9 +41,8 @@ namespace NeonRose.Controllers
             if (_characterState != CharacterState.DASHING)
             {
                var playerDirection = context.ReadValue<Vector2>();
-                    _direction.x = playerDirection.x;
-                    _direction.z = playerDirection.y;
-                    // _direction.y = _body.velocity.z;
+               _direction.x = playerDirection.x;
+               _direction.z = playerDirection.y;
             }
         }
 
@@ -85,7 +87,13 @@ namespace NeonRose.Controllers
 
         private void HandleGroundedState()
         {
-            Vector3 generalVelocity = _direction * speed; 
+            var correctedDirection = _direction;
+            if (_direction.magnitude > 0.01f)
+            {
+                correctedDirection.x = Mathf.Cos(angle) * _direction.x - Mathf.Sin(angle) * _direction.z;
+                correctedDirection.z = Mathf.Sin(angle) * _direction.x + Mathf.Cos(angle) * _direction.z;
+            }
+            Vector3 generalVelocity = correctedDirection * speed; 
             float yVelocity = _body.velocity.y;
             _body.velocity = new Vector3(generalVelocity.x, yVelocity, generalVelocity.z);
         }
