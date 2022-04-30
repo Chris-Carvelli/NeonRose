@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace NeonRose.PlayerControllers
+namespace NeonRose.Controllers
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class CharacterController : MonoBehaviour
     {
         public float speed = 5.0f;
