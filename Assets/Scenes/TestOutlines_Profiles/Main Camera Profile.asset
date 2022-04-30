@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3627239898491415637
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: PostProcessOutline
+  m_EditorClassIdentifier: Assembly-CSharp:PostProcessingOutline:PostProcessOutline
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  depthEdge:
+    overrideState: 0
+    value: 0
+  normalEdge:
+    overrideState: 0
+    value: 0
+  useColor:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 1
+  edgeDepthFactor:
+    overrideState: 0
+    value: 100
+  normalThreshold:
+    overrideState: 0
+    value: 0.4
 --- !u!114 &-1250186018974026344
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -48,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 4927019825322097744}
-  - {fileID: 2080166356878853385}
+  - {fileID: -3627239898491415637}
 --- !u!114 &2080166356878853385
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -98,7 +132,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   intensity:
     overrideState: 1
     value: 6.75
