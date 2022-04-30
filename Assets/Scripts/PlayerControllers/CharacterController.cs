@@ -17,7 +17,7 @@ namespace NeonRose.PlayerControllers
 
         private void FixedUpdate()
         {
-            _body.position += CalculateMovement();
+            _body.velocity = CalculateMovement();
         }
 
         public void OnMove(InputAction.CallbackContext context)
