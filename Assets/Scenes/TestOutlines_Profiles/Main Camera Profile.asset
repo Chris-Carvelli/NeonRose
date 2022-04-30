@@ -47,8 +47,42 @@ MonoBehaviour:
   m_Name: Main Camera Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -1250186018974026344}
   - {fileID: 4927019825322097744}
+  - {fileID: 2080166356878853385}
+--- !u!114 &2080166356878853385
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: PostProcessOutline
+  m_EditorClassIdentifier: Assembly-CSharp:PostProcessingOutline:PostProcessOutline
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  depthEdge:
+    overrideState: 0
+    value: 0
+  normalEdge:
+    overrideState: 0
+    value: 0
+  useColor:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 1
+  edgeDepthFactor:
+    overrideState: 0
+    value: 100
+  normalThreshold:
+    overrideState: 0
+    value: 0.4
 --- !u!114 &4927019825322097744
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -67,7 +101,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 3.42
+    value: 6.75
   threshold:
     overrideState: 0
     value: 1
