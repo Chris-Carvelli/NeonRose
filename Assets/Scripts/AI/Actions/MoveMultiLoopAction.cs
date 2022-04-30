@@ -84,7 +84,6 @@ namespace B3.Actions
         void Update()
         {
             success = agent.CalculatePath(Locations[locationIndex].transform.position, path);
-            Debug.Log(Vector3.Distance(transform.position, agent.destination));
             if (Vector3.Distance(transform.position, agent.destination) < 1.1f)
             {
                 if (locationIndex + 1 == Locations.Length)
