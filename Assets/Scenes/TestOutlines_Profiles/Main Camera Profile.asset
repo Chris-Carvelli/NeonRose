@@ -52,10 +52,10 @@ MonoBehaviour:
     value: 1
   depthEdge:
     overrideState: 1
-    value: 0
+    value: 1
   normalEdge:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   useColor:
     overrideState: 0
     value: 0
