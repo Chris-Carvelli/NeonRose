@@ -92,7 +92,7 @@
 
 				// return color;
 				float edge = max(edgeDepth, edgeNormal);
-				if (threshold > 0.5)
+				if (threshold > 0.05)
 					return color;
 				// color = max(edge, color);
 				return edge;

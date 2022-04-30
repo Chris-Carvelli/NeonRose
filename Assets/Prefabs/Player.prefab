@@ -612,10 +612,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpHeight: 10
   dashDistance: 3
   dashCd: 5
   dashDuration: 0.5
   _direction: {x: 0, y: 0, z: 0}
+  angle: 0
 --- !u!114 &8534411122833027705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +670,7 @@ MonoBehaviour:
   radius: 1
   hardness: 0.5
   strength: 0.5
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 1.8443027, g: 0.550394, b: 0.51176983, a: 1}
 --- !u!136 &6804122802756805611
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -804,6 +806,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b0b244d6-ea8d-4e7b-9457-6712da5e6044
     m_ActionName: Player/Dash[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b49b1827-ff29-4932-b71e-d10dabd68f34
+    m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

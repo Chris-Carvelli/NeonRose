@@ -2,8 +2,8 @@ Shader "Chris/PaintableShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-        _MaskTex ("Paint Mask", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "black" {}
+        _MaskTex ("Paint Mask", 2D) = "black" {}
     }
     SubShader
     {

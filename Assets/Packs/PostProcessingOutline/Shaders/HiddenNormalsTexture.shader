@@ -34,6 +34,8 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            
+            sampler2D _MaskTex;
 
             v2f vert (appdata v)
             {
@@ -48,8 +50,9 @@
 
             float4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
-                return float4(normalize(i.viewNormal) * 0.5 + 0.5, col.r);
+                fixed mainAlpha = tex2D(_MainTex, i.uv).a;
+                fixed maskAlpha = tex2D(_MaskTex, i.uv).a;
+                return float4(normalize(i.viewNormal) * 0.5 + 0.5, max(mainAlpha, maskAlpha));
             }
             ENDCG
         }

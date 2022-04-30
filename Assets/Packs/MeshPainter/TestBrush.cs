@@ -7,6 +7,7 @@ namespace Packs.MeshPainter
         public float radius = 1;
         public float hardness = .5f;
         public float strength = .5f;
+        [ColorUsage(true, true)]
         public Color color = Color.red;
         private void OnCollisionStay(Collision collision)
         {
