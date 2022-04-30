@@ -9,12 +9,13 @@ namespace Packs.MeshPainter
         public float strength = .5f;
         [ColorUsage(true, true)]
         public Color color = Color.red;
-        private void OnCollisionStay(Collision collision)
+
+        private void OnTriggerStay(Collider other)
         {
-            Paintable p = collision.transform.GetComponent<Paintable>();
+            Paintable p = other.transform.GetComponent<Paintable>();
             if (p != null)
             {
-                Vector3 pos = collision.contacts[0].point;
+                Vector3 pos = transform.position;
                 MeshPainterManager.Instance.Paint(p, pos, radius, hardness, strength, color);
             }
         }
