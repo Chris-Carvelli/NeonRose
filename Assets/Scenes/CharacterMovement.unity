@@ -543,7 +543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  dashDistance: 10
+  dashDistance: 20
+  dashCd: 5
   dashDuration: 0.5
   _direction: {x: 0, y: 0, z: 0}
 --- !u!54 &785600729

@@ -34,18 +34,20 @@ namespace NeonRose.Controllers
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            var playerDirection = context.ReadValue<Vector2>();
-            _direction.x = playerDirection.x;
-            _direction.z = playerDirection.y;
-            _direction.y = 0;
+            if (_characterState != CharacterState.DASHING)
+            {
+                       var playerDirection = context.ReadValue<Vector2>();
+                            _direction.x = playerDirection.x;
+                            _direction.z = playerDirection.y;
+                            _direction.y = 0;
+            }
         }
 
         public void OnDash(InputAction.CallbackContext context)
         {
-            if (_characterState == CharacterState.GROUNDED)
+            if (context.started && _characterState == CharacterState.GROUNDED)
             {
                 _characterState = CharacterState.DASHING;
-                stateTimer = Time.time;
             }
         }
         
@@ -78,11 +80,15 @@ namespace NeonRose.Controllers
 
         private void HandleDashingState()
         {
-            _body.velocity = _direction * (speed * dashDistance);
+            _body.velocity = _direction.normalized * (speed * dashDistance);
             if (stateTimer < 0 || Time.time - stateTimer >= dashDuration)
             {
                 _characterState = CharacterState.GROUNDED;
                 stateTimer = -1;
+            }
+            else
+            {
+                stateTimer = Time.time;
             }
         }
 
