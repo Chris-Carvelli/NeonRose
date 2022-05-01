@@ -5,6 +5,6 @@ namespace NeonRose.Controllers
         GROUNDED,
         AIRBORNE,
         DASHING,
-        STOMPING
+        CLIMBING
     }
 }
