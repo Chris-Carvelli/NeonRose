@@ -132,7 +132,6 @@ namespace NeonRose.Controllers
             {
                 _characterState = CharacterUtils.GetDefaultState(_isGrounded);
                 stateTimer = -1;
-                HandleGroundedState();
             }
             else
             {
