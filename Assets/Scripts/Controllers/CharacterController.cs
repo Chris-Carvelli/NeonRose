@@ -17,13 +17,14 @@ namespace NeonRose.Controllers
         public float dashCd = 5.0f;
         public float dashDuration = .5f;
         public float raycastDistance = 1f;
+        public float groundRaycastDistance = 1.1f;
         
         private float stateTimer; // time a player can be in a state 
         public Vector3 _direction;
         public float angle;
         
-        private bool _canClimb;
-        private bool _isGrounded;
+        public bool _canClimb;
+        public bool _isGrounded;
 
         private void Start()
         {
@@ -49,7 +50,7 @@ namespace NeonRose.Controllers
             _canClimb = Physics.Raycast(pos, fwd, raycastDistance);
 
             var ground = transform.TransformDirection(Vector3.down);
-            _isGrounded = Physics.Raycast(pos, ground, 1.0f); 
+            _isGrounded = Physics.Raycast(pos, ground, groundRaycastDistance);
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -70,7 +71,7 @@ namespace NeonRose.Controllers
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            if (context.started && !_isGrounded)
+            if (context.started && _isGrounded)
             {
                 _body.AddForce(0, jumpHeight, 0, ForceMode.Impulse);
                 _characterState = CharacterState.AIRBORNE;
@@ -131,6 +132,7 @@ namespace NeonRose.Controllers
             {
                 _characterState = CharacterUtils.GetDefaultState(_isGrounded);
                 stateTimer = -1;
+                HandleGroundedState();
             }
             else
             {
