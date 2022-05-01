@@ -6213,6 +6213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6284302415665645943, guid: d0b1277576db44c3098df5cdd4525999, type: 3}
+      propertyPath: raycastDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6284302415665645944, guid: d0b1277576db44c3098df5cdd4525999, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 16
@@ -33087,7 +33091,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950248083}
-  m_LocalRotation: {x: 0.13856103, y: 0.072947666, z: -0.010234501, w: 0.98761064}
+  m_LocalRotation: {x: 0.13856103, y: 0.072947636, z: -0.010234499, w: 0.98761064}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
