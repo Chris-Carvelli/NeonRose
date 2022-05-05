@@ -8,7 +8,7 @@ namespace NeonRose.Controllers
     public class CharacterController : MonoBehaviour
     {
         private Rigidbody _body;
-        private CharacterState _characterState;
+        public CharacterState _characterState;
         private Camera _camera;
         
         public float speed = 5.0f;

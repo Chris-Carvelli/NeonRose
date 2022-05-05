@@ -52,6 +52,7 @@
             {
                 fixed mainAlpha = tex2D(_MainTex, i.uv).a;
                 fixed maskAlpha = tex2D(_MaskTex, i.uv).a;
+                // return float4(mainAlpha, 0, 0, 1);
                 return float4(normalize(i.viewNormal) * 0.5 + 0.5, max(mainAlpha, maskAlpha));
             }
             ENDCG

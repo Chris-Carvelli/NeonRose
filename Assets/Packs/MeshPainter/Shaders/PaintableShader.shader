@@ -2,6 +2,7 @@ Shader "Chris/PaintableShader"
 {
     Properties
     {
+        _Tint ("Tint", Color) = (1, 1, 1, 1)
         _MainTex ("Texture", 2D) = "black" {}
         _MaskTex ("Paint Mask", 2D) = "black" {}
     }
@@ -36,6 +37,8 @@ Shader "Chris/PaintableShader"
             sampler2D _MaskTex;
             float4 _MaskTex_ST;
 
+            float4 _Tint;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -47,7 +50,9 @@ Shader "Chris/PaintableShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MaskTex, i.uv);
+                fixed4 mainCol = tex2D(_MainTex, i.uv) * _Tint;
+                fixed4 maskCol = tex2D(_MaskTex, i.uv);
+                fixed4 col = lerp(mainCol, maskCol, maskCol.a);
                 return col;
             }
             ENDCG

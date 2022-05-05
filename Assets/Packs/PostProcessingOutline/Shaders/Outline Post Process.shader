@@ -87,10 +87,10 @@
 
 				edgeDepth *= _DeptEdge;
 
-								
+							
 				float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
 
-				// return color;
+				// return float4(threshold, 0, 0, 0);
 				float edge = max(edgeDepth, edgeNormal);
 				if (threshold > 0.05)
 					return color;
