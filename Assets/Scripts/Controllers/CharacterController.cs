@@ -21,6 +21,7 @@ namespace NeonRose.Controllers
 
         public Vector3 _direction;
 
+        public bool isSpraying;
         public float angle;
 
         private void Start()
@@ -28,6 +29,15 @@ namespace NeonRose.Controllers
             _characterState = CharacterState.GROUNDED;
             _camera = Camera.main;
             _body = GetComponent<Rigidbody>();
+            isSpraying = false;
+        }
+
+        private void Update()
+        {
+            if (isSpraying)
+            {
+                // spray
+            }
         }
 
         private void FixedUpdate()
@@ -56,11 +66,21 @@ namespace NeonRose.Controllers
 
         public void OnJump(InputAction.CallbackContext context)
         {
-
             if (_body.velocity.y == 0 && context.started)
             { 
                 _body.AddForce(0, jumpHeight, 0, ForceMode.Impulse);
                 _characterState = CharacterState.AIRBORNE;
+            }
+        }
+
+        public void OnSpray(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                isSpraying = true;
+            } else if (context.canceled)
+            {
+                isSpraying = false;
             }
         }
         
