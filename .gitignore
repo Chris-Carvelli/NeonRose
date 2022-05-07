@@ -77,9 +77,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Third Party Dependencies we get through NuGet
-Assets/com.modl-ai.platform/Runtime/Resources/Plugins*
-
 # packages folder
 Packages/
 
