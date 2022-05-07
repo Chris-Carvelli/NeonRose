@@ -56,17 +56,6 @@ ExportedObj/
 # Unity3D generated file on crash reports
 sysinfo.txt
 
-# Builds
-*.apk
-*.aab
-*.unitypackage
-## Build Output folder for Modl.ai binaries and pkgs
-/[Bb]uildOutput
-## ModlAI-Config/ change per local config
-/[Aa]ssets/ModlAI-Config*
-##  packages-lock.json is to cache package downloads, not needed in the repo
-/[Pp]ackages/packages-lock.json
-
 # Crashlytics generated file
 crashlytics-build.properties
 
